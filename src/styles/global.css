@@ -4,6 +4,10 @@
 
 @layer base {
 	body {
-		@apply bg-zinc-900 text-white;
+		@apply antialiased text-white bg-zinc-900
 	}
+	
 }
+
+
+  

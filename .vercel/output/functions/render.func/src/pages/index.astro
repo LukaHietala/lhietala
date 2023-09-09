@@ -5,9 +5,9 @@ import { SITE_TITLE } from "../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 
-const posts = (await getCollection("blog")).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
-)
+// const posts = (await getCollection("blog")).sort(
+// 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+// )
 ---
 
 <!DOCTYPE html>
@@ -16,9 +16,9 @@ const posts = (await getCollection("blog")).sort(
 		<BaseHead title={SITE_TITLE} />
 	</head>
 	<body>
-		<main class="max-w-2xl mx-auto py-12 flex flex-col space-y-10">
-			<div class="space-y-4">
-				<h1 class="text-lg font-medium">Luka Hietala</h1>
+		<main class="max-w-2xl mx-auto py-12 flex flex-col space-y-8">
+			<div class="space-y-2">
+				<h1 class="text-xl font-semibold">Luka Hietala</h1>
 				<p>
 					{`Fullstack developer from Finland. Using `}
 					<Badge href="https://trpc.io">
@@ -56,11 +56,12 @@ const posts = (await getCollection("blog")).sort(
 			</div>
 			<div class="grid grid-cols-2">
 				<div class="space-y-2">
-					<h2 class="text-sm tracking-wide text-zinc-300">
+					<h2 class="text-lg font-semibold">
 						Blog
 						<a href="/blog" class="text-sm font-normal text-zinc-500">All</a>
 					</h2>
-					{
+					<p class="text-sm text-zinc-500">Coming soon</p>
+					<!-- {
 						posts.map((post) => (
 							<a href={`/blog/${post.slug}`} class="block hover:underline">
 								{post.data.title}
@@ -69,10 +70,10 @@ const posts = (await getCollection("blog")).sort(
 								</span>
 							</a>
 						))
-					}
+					} -->
 				</div>
 				<div class="space-y-2">
-					<h2 class="text-sm tracking-wide text-zinc-300">Projects</h2>
+					<h2 class="text-lg font-semibold">Projects</h2>
 					<a href="https://github.com/LukaHietala/classroom-application" class="block hover:underline">Classroom app</a>
 				</div>
 			</div>
