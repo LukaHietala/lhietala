@@ -4,7 +4,7 @@
 
 @layer base {
 	body {
-		@apply antialiased text-white bg-zinc-900
+		@apply antialiased
 	}
 	
 }

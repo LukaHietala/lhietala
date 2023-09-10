@@ -17,52 +17,19 @@ const posts = (await getCollection("blog")).sort(
 	</head>
 	<body>
 		<main class="max-w-2xl mx-auto py-12 flex flex-col space-y-10">
-			<div class="space-y-4">
-				<h1 class="text-lg font-medium">Luka Hietala</h1>
-				<p>
-					{`Fullstack developer from Finland. Using `}
-					<Badge href="https://trpc.io">
-						<span>tRPC</span>
-					</Badge>
-					{`, `}
-					<Badge href="https://astro.build">
-						<span>Astro</span>
-					</Badge>
-					{`, `}
-					<Badge href="https://tailwindcss.com">
-						<span>Tailwind CSS</span>
-					</Badge>
-					{`, `}
-					<Badge href="https://nextjs.org">
-						<span>Next.js</span>
-					</Badge>
-					{`, and `}
-					<Badge href="https://reactjs.org">
-						<span>React</span>
-					</Badge>
-					{` to build things. And I use services like `}
-					<Badge href="https://vercel.com">
-						<span>Vercel</span>
-					</Badge>
-					{` and `}
-					<Badge href="https://planetscale.com">
-						<span>PlanetScale</span>
-					</Badge>
-					{` to deploy databases and websites. `}
-					<Badge href="https://github.com/lukahietala">
-						<span>GitHub</span>
-					</Badge>
-				</p>
+			<div class="space-y-1 mx-2">
+				<h1 class="text-lg font-bold leading-none">Luka Hietala</h1>
+				<p class="text-sm text-zinc-600">Software developer</p>
 			</div>
-			<div class="grid grid-cols-2">
-				<div class="space-y-2">
-					<h2 class="text-sm tracking-wide text-zinc-300">
+			<div class="grid grid-cols-2 gap-4">
+				<div class="space-y-3">
+					<h2 class="mx-2 ">
 						Blog
-						<a href="/blog" class="text-sm font-normal text-zinc-500">All</a>
+						<a href="/blog" class="text-sm font-normal text-zinc-500 ">All</a>
 					</h2>
 					{
 						posts.map((post) => (
-							<a href={`/blog/${post.slug}`} class="block hover:underline">
+							<a href={`/blog/${post.slug}`} class="p-2 hover:bg-gray-100 rounded-md flex flex-col gap-1">
 								{post.data.title}
 								<span class="text-sm text-zinc-500">
 									<FormattedDate date={post.data.pubDate} />
@@ -71,9 +38,12 @@ const posts = (await getCollection("blog")).sort(
 						))
 					}
 				</div>
-				<div class="space-y-2">
-					<h2 class="text-sm tracking-wide text-zinc-300">Projects</h2>
-					<a href="https://github.com/LukaHietala/classroom-application" class="block hover:underline">Classroom app</a>
+				<div class="space-y-3">
+					<h2 class="mx-2">Projects</h2>
+					<a href="https://github.com/LukaHietala/classroom-application" class="p-2 hover:bg-gray-100 rounded-md flex flex-col gap-1">
+						Classroom App
+						<span class="text-sm text-zinc-500">OSS Alternative to Google Classroom</span>
+					</a>
 				</div>
 			</div>
 			<div>
